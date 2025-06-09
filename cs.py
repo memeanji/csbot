@@ -17,12 +17,17 @@ def expensive_computation():
 # CSS 스타일 추가
 col1, col2 = st.columns([4, 1])
 
-with col1:
-    st.markdown(
-        "<h1 style='font-size: 32px; font-weight: bold; color: #4CAF50;'> AI 고객 상담사</h1>",
-        unsafe_allow_html=True
-    )
+# 제목 스타일 CSS 삽입 (h1 태그 색 검정으로 강제)
+st.markdown("""
+<style>
+h1 {
+    color: #000000 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
+with col1:
+    st.markdown("<h1>📦 고객센터 챗봇</h1>", unsafe_allow_html=True)
 st.markdown(
     """
 <style>
